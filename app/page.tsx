@@ -8,7 +8,7 @@ type User = {
   email: string;
 };
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000'}/myapp/api/users`;
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:3000'}/myapp/api/users`;
 
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -73,6 +73,7 @@ export default function UsersPage() {
   }
 
   useEffect(() => {
+    console.log("[LOG] - page.tsx:13 - API_URL:", API_URL)
     fetchUsers();
   }, []);
 
