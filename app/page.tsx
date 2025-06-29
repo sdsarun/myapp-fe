@@ -73,6 +73,7 @@ export default function UsersPage() {
   }
 
   useEffect(() => {
+    console.log("[LOG] - page.tsx:13 - process.env:", process.env)
     console.log("[LOG] - page.tsx:13 - API_URL:", API_URL)
     fetchUsers();
   }, []);
